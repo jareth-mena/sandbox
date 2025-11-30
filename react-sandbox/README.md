@@ -1,6 +1,8 @@
 # Tools
 
 [tweackcn (shadcn editor)](https://tweakcn.com/editor/theme)
+[Lucide (shadcn icons)](https://lucide.dev/icons/)
+[Install shadcn](https://ui.shadcn.com/docs/installation/vite)
 
 ---
 
