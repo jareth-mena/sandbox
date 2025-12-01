@@ -1,5 +1,7 @@
-import Sidebar from "@/components/Sidebar.tsx";
-import Navbar from "@/components/Navbar.tsx";
+import AppSidebar from "@/components/AppSidebar.tsx";
+import AppNavbar from "@/components/AppNavbar.tsx";
+import {ThemeProvider} from "@/components/ui/theme-provider.tsx";
+import {SidebarProvider} from "@/components/ui/sidebar.tsx";
 
 type LayoutProps = {
     children?: React.ReactNode;
@@ -7,12 +9,18 @@ type LayoutProps = {
 
 export default function Layout({children}: Readonly<LayoutProps>) {
     return (
-        <div className="flex">
-            <Sidebar/>
-            <div className="w-full">
-                <Navbar/>
-                <div className="px-4">{children}</div>
-            </div>
-        </div>
+        <ThemeProvider>
+            <SidebarProvider>
+                <AppSidebar/>
+
+
+                    <div className="w-full">
+                        <AppNavbar/>
+                        <div className="px-4">{children}</div>
+                    </div>
+
+            </SidebarProvider>
+        </ThemeProvider>
+
     )
 }
